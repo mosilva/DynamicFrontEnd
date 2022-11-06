@@ -28,4 +28,14 @@ var bmi = calculateBmi(weightMarcelo,heightMarcelo);
 
 show("The "+ name + " BMI is "+bmi);
 
+if(bmi < 18.5){
+    show("Your BMI is low! You must win weight!");
+}
+else if(bmi > 35){
+    show("Your BMI is hight! You must lose weight!");
+}
+else{
+    show("Your BMI is in the average! Congrats!");
+}
+
 </script>
