@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>
+
+function breakRow() {
+    // pulando duas linhas
+    document.write("<br><hr><br>");
+}
+
+function show(phrase) {
+    document.write(phrase);
+    breakRow();
+}
+
+function calculateBmi(weight,height){
+
+    var bmi = weight / (height*height);
+    return Math.round(bmi);
+
+}
+
+var weightMarcelo = 80;
+var heightMarcelo = 1.70;
+
+
+var bmi = calculateBmi(weightMarcelo,heightMarcelo);
+
+show("The BMI is "+bmi)
+
+</script>
