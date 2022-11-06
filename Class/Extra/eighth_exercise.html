@@ -7,9 +7,10 @@
 </html>
 <script>
 
-    var secret = 5;
+    var secret = Math.round(Math.random()*10);
 
     var input = document.querySelector("input");
+    input.focus();
 
     function verify(){
         if(input.value == secret){
@@ -17,6 +18,9 @@
         }else{
             alert("You wrong!");
         }
+
+        input.valeu = "";
+        input.focus();
     }
 
     var button = document.querySelector("button");
