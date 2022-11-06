@@ -1,41 +1,71 @@
-<meta charset= "UTF-8"/>
-<html>
+<meta charset="UTF-8" />
 
-<input/>
-<button>Compare with my secret</button>
+  <input/>
+  <button>Compare with my secret</button>
 
-</html>
 <script>
 
-    var secrets = [Math.round(Math.random()*10)
-                 ,Math.round(Math.random()*10)
-                 ,Math.round(Math.random()*10)
-                 ,Math.round(Math.random()*10)];
+  function sort() {
+      return Math.round(Math.random()*10);
+  }
 
-    var input = document.querySelector("input");
-    input.focus();
+  function sortNumbers(quantity){
 
-    function verify(){
+      var secrets = [];
 
-        var notFind;
-        for(var position = 0; position < secret.length; position++){
+      var numbers =1;
 
-            if(input.value == secrets[position]){
-                notFind == false;
-                alert("You are correct!");
-                break;
+      while(quantity>=numbers){
+
+          var randomNumber = sort();
+
+          if(randomNumber != 0){
+          var find = false;
+
+          for(var position = 0; position < secrets.length;position++){
+              if(secrets[position]==randomNumber){
+                  find=true;
+                  break;
+              }
             }
-            input.valeu = "";
-            input.focus();
+
+            if(find==false){
+              secrets.push(randomNumber);
+              numbers++;
+          }
         }
+      }
+      console.log(secrets);
+      return secrets;
+  }
 
-        if(find){
-            alert("You wrong!");
-        }
+  var secrets = sortNumbers(5);
 
-    }
+  var input = document.querySelector("input");
+  input.focus();
 
-    var button = document.querySelector("button");
-    button.onclick = verify;
+  function verify(){
+
+      var notFind = true;
+      for(var position = 0; position < secrets.length; position++){
+
+          if(input.value == secrets[position]){
+              notFind = false;
+              alert("You are correct!");
+
+              break;
+          }
+      }
+
+      if(notFind){
+          alert("You wrong!");
+      }
+
+      input.value = "";
+      input.focus();
+  }
+
+  var button = document.querySelector("button");
+  button.onclick = verify;
 
 </script>
