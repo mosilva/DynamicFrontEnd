@@ -7,20 +7,32 @@
 </html>
 <script>
 
-    var secret = Math.round(Math.random()*10);
+    var secrets = [Math.round(Math.random()*10)
+                 ,Math.round(Math.random()*10)
+                 ,Math.round(Math.random()*10)
+                 ,Math.round(Math.random()*10)];
 
     var input = document.querySelector("input");
     input.focus();
 
     function verify(){
-        if(input.value == secret){
-            alert("You are correct!");
-        }else{
+
+        var notFind;
+        for(var position = 0; position < secret.length; position++){
+
+            if(input.value == secrets[position]){
+                notFind == false;
+                alert("You are correct!");
+                break;
+            }
+            input.valeu = "";
+            input.focus();
+        }
+
+        if(find){
             alert("You wrong!");
         }
 
-        input.valeu = "";
-        input.focus();
     }
 
     var button = document.querySelector("button");
