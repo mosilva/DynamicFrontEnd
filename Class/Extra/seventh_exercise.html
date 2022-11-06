@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script>
+
+function breakRow() {
+    // pulando duas linhas
+    document.write("<br><hr><br>");
+}
+
+function show(phrase) {
+    document.write(phrase);
+    breakRow();
+}
+
+show("<h1>multiplication table</h1>")
+
+var multiplication = 1;
+
+do{
+    var mainNumber = parseInt(prompt("Type the main number for multiplication table"));
+}while(isNaN(mainNumber));
+
+while(multiplication <=10){
+
+    show(mainNumber + " x " + multiplication + " = " + multiplication*mainNumber);
+    multiplication++;
+
+}
+
+
+</script>
