@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<script>
+
+function breakRow() {
+    // pulando duas linhas
+    document.write("<br><hr><br>");
+}
+
+function show(phrase) {
+    document.write(phrase);
+    breakRow();
+}
+
+var victories = parseInt(prompt("What's a number of vitories: "));
+var draws = parseInt(prompt("What's the number of draws?"));
+var points = victories *3 + draws;
+
+
+show("The points of your football team is "+ points +" Last year, it made 28 points");
+
+if(points == 28){
+    show("Your team is the same as last year");
+}
+
+else if(points < 28){
+    show("Your team is worse than the last year");
+}
+else{
+    show("Your team is better than last year");
+}
+
+
+
+
+
+</script>
