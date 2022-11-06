@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+function breakRow() {
+    // pulando duas linhas
+    document.write("<br><hr><br>");
+}
+
+function show(phrase) {
+    document.write(phrase);
+    breakRow();
+}
+
+var magicNumber = Math.round(Math.random()*10);
+console.log(magicNumber);
+
+var shot = parseInt(prompt("Shot a number: "));
+
+if(shot == magicNumber){
+    show("The shot is correct. You accept the magic number");    
+}
+else{
+    show("Sorry! You wrong! The magic number is "+magicNumber);
+}
+
+
+
+</script>
