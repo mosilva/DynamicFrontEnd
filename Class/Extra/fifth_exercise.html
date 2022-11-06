@@ -15,15 +15,22 @@ function show(phrase) {
 var magicNumber = Math.round(Math.random()*10);
 console.log(magicNumber);
 
+var count=0;
+while(count <3){
+
 var shot = parseInt(prompt("Shot a number: "));
 
-if(shot == magicNumber){
-    show("The shot is correct. You accept the magic number");    
-}
-else{
-    show("Sorry! You wrong! The magic number is "+magicNumber);
+    if(shot == magicNumber){
+        show("The shot is correct. You accept the magic number");    
+        break;
+    }
+    else{
+        show("Sorry! You wrong!");
+    }
+
+    count++;
 }
 
-
+show("The magic number is "+magicNumber);
 
 </script>
