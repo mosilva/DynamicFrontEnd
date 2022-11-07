@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"/>
+
+<html>
+<body>
+
+<canvas width = "600" height = "400" style="border:1px solid #000000">
+</canvas>
+
+<canvas id="canvas2" width = "600" height= "400" style="border:1px solid #000000">
+</canvas>
+
+<canvas id="canvas3" width = "600" height= "400" style="border:1px solid #000000">
+</canvas>
+
+
+
+<script>
+    
+    /* Canvas - France flag */
+
+    var canvas = document.querySelector("canvas");
+    var brush = canvas.getContext("2d");
+
+    brush.fillStyle="blue";
+    brush.fillRect(0,0,200,400);
+
+    brush.fillStyle="white";
+    brush.fillRect(200,0,200,400);
+
+    brush.fillStyle="red";
+    brush.fillRect(400,0,200,400);
+
+
+    /* Canvas 2 - Draws*/
+
+    var canvas2 = document.getElementById("canvas2");
+    var brush2 = canvas2.getContext("2d");
+
+    canvas2.style.left = "10px";
+    canvas2.style.top = "480px";
+    canvas2.style.position = "absolute";
+
+    brush2.fillStyle = "lightgrey";
+    brush2.fillRect(0,0, 600, 400);
+
+    brush2.beginPath();
+    brush2.moveTo(300, 200);
+    brush2.lineTo(200, 380);
+    brush2.lineTo(400, 380);
+    brush2.closePath();
+    brush2.stroke();
+    brush2.fillStyle = "red";
+    brush2.fill();
+
+    brush2.fillStyle = "blue";
+    brush2.beginPath();
+    brush2.arc(300,150, 50, 0, 2 * 3.14);
+    brush2.fill();
+
+/*Canvas 3 - Brazil flag */
+
+var canvas3 = document.getElementById("canvas3");
+var brush3 = canvas3.getContext("2d");
+
+canvas3.style.left = "10px";
+canvas3.style.top = "950px";
+canvas3.style.position = "absolute";
+
+
+brush3.fillStyle='green';
+brush3.fillRect(0, 0, 600, 400);
+
+brush3.fillStyle='yellow';
+brush3.beginPath();
+brush3.moveTo(300, 50);
+brush3.lineTo(50, 200);
+brush3.lineTo(550, 200);
+brush3.fill();
+
+brush3.beginPath();
+brush3.moveTo(300, 350);
+brush3.lineTo(50, 200);
+brush3.lineTo(550, 200);
+brush3.fill();
+
+brush3.fillStyle='darkblue';
+brush3.beginPath();
+
+brush3.arc(300, 200, 100, 0, 2*3.14);
+brush3.fill();
+
+
+</script>
+
+
+
+</body>
+</html>
