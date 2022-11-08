@@ -4,13 +4,14 @@
 <script>
 
     let canvas = document.querySelector("canvas");
-    let brush = brush.getContext("2d");
+    let brush = canvas.getContext("2d");
     brush.fillStyle = "lightgray";
     brush.fillRect(0, 0, 600, 400);
 
 
-
-
+    let radius = 10;
+    let randomX = positionRaffle(600);
+    let randomY = positionRaffle(400);
 
     function drawCircle(x,y,radius, color){
 
@@ -20,5 +21,47 @@
         brush.fill();
 
     }
+
+    function drawTarget(x, y){
+
+        drawCircle(x, y, radius*3, "red");
+        drawCircle(x, y, radius*2, "white");
+        drawCircle(x, y, radius, "red");
+   }
+    
+    function positionRaffle(max){
+
+        return Math.floor(Math.random() * max);
+
+    }
+
+    function updateScreen(){
+        cleanCanvas();   
+        randomX = positionRaffle(600);
+        randomY = positionRaffle(400);
+        drawTarget(randomX, randomY);
+
+    }
+
+    function cleanCanvas(){
+        brush.fillStyle = "lightgray";
+        brush.fillRect(0, 0, 600, 400);
+    }
+
+    setInterval(updateScreen,1000);
+
+    function shot(event){
+
+        let x = event.pageX - canvas.offsetLeft;
+        let y = event.pageY - canvas.offsetTop;
+
+        if((x > randomX - radius) && (x < randomX + radius) && 
+           (y > randomY - radius) && (y < randomY + radius)){
+            alert("shot the target! Congrats!");
+        }
+
+    }
+
+    canvas.onclick = shot;
 
 </script>
