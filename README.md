@@ -1,4 +1,4 @@
-# DynamicFrontEnd
+# Dynamic Front End
 
 <h2>Extras<h2/>
 <figure>
