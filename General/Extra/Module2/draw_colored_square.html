@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"/>
+
+<html>
+<body>
+
+<canvas width = "600" height = "400" style="border:1px solid #000000">
+</canvas>
+
+
+<script>
+    
+    function drawColoredSquare(x, y, color){
+
+    brush.fillStyle = color;
+    brush.fillRect(x,y,50,50);
+    brush.fillStroke = "black";
+    brush.strokeRect(x,y,50,50);
+        
+    }
+
+    var canvas = document.querySelector("canvas");
+    var brush = canvas.getContext("2d");
+
+    var x = 0;
+    var positionColor = 0;
+
+    var colors= ["blue","red","yellow","green"]
+
+    while(x < 600){
+
+        drawColoredSquare(x,0, colors[positionColor]);
+        x = x + 50;
+
+        if(positionColor+1==colors.length){
+            positionColor = 0;
+        }
+        else{
+            positionColor++;
+        }
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
