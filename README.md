@@ -2,7 +2,7 @@
 
 <h2>Extras<h2/>
 <figure>
-<figcaption>Module 1</figcaption>
+<figcaption>Module 1 - text / style / UI</figcaption>
 <ol type = "i">
 <li><a href = "https://mosilva.github.io/DynamicFrontEnd/General/Extra/Module1/first_exercise.html" target="_blank"> General commands in JavaScript <a/></li>
 <li><a href = "https://mosilva.github.io/DynamicFrontEnd/General/Extra/Module1/second_exercise.html" target="_blank"> Show HTML through JavaScript <a/></li>
@@ -16,7 +16,7 @@
 </figure>
 
 <figure>
-<figcaption>Module 2</figcaption>
+<figcaption>Module 2 - draw / simple animation</figcaption>
 <ol type = "i">
 <li><a href = "https://mosilva.github.io/DynamicFrontEnd/General/Extra/Module2/draws.html" target="_blank"> Draws <a/></li>
 <li><a href = "https://mosilva.github.io/DynamicFrontEnd/General/Extra/Module2/draw_colored_square.html" target="_blank"> Draw colored square <a/></li>
