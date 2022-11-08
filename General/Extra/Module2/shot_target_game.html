@@ -1,0 +1,24 @@
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    let canvas = document.querySelector("canvas");
+    let brush = brush.getContext("2d");
+    brush.fillStyle = "lightgray";
+    brush.fillRect(0, 0, 600, 400);
+
+
+
+
+
+    function drawCircle(x,y,radius, color){
+
+        brush.fillStyle = color;
+        brush.beginPath();
+        brush.arc(x,y,radius, 0, 2* Math.PI);
+        brush.fill();
+
+    }
+
+</script>
