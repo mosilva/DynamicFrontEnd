@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Animal{
+
+            constructor(nome, especie, pais, numeroVivos){
+                this.nome = nome;
+                this.especie = especie;
+                this.pais = pais;
+                this.numeroVivos = numeroVivos;
+            }
+        }
+
+        let animais = [];
+
+        let anima1 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima2 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima3 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima4 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima5 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima6 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima7 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima8 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima9 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+        let anima10 = new Animal("Elefante","Elephas maximus","África do Sul","10000");
+
+        animais  = [anima1, anima2, anima3, anima4, anima5, anima6, anima7, anima8, anima9, anima10];
+
+        const header = ["Nome","Espécie","País","Número de exemplares vivos"];
+        const headerClass = ["nome","especie","pais","numeroVivos"];
+
+        function myFunction() {
+  
+          var x = document.createElement("TABLE");
+          x.setAttribute("id", "myTable");
+          document.body.appendChild(x);
+          let headerTable = "";
+          
+          for(let i = 0; i < header.length; i++){
+        
+          const thead = document.createElement("thead");
+          const theadTr  = document.createElement("tr");
+          const theadTh = document.createElement("th");
+          theadTh.textContent = header[i];
+          theadTr.appendChild(theadTh);
+          thead.appendChild(theadTr);
+          document.getElementById("myTable").appendChild(thead);
+          headerTable = headerClass[i];
+          
+          for(let j = 0; j < animais.length; j++){
+
+          var tbody = document.createElement("TBODY");
+          var tbodyTr  = document.createElement("TR");
+          var tbodyTd = document.createElement("TD");
+          tbodyTd.textContent = animais[j].nome
+          tbodyTr.appendChild(tbodyTd);
+          tbody.appendChild(tbodyTr);
+          document.getElementById("myTable").appendChild(tbody);
+          
+
+          }
+        }
+
+        var tfoot = document.createElement("TFOOT");
+          var tfootTr = document.createElement("TR");
+          var tfootTd = document.createElement("TD");
+          tfootTd.textContent = "A Footer!"
+          tfootTr.appendChild(tfootTd);
+          tfoot.appendChild(tfootTr);
+          document.getElementById("myTable").appendChild(tfoot);
+    }
+    
+    myFunction();
+
+    </script>
+
+
+</body>
+</html>
