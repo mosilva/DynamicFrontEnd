@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let animal1 = {
+    "nome" : "Elefante",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal2 = {
+    "nome" : "Gafanhoto",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal3 = {
+    "nome" : "Aguia",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal4 = {
+    "nome" : "Barata",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal5 = {
+    "nome" : "Elefante",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal6 = {
+    "nome" : "Elefante",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal7 = {
+    "nome" : "Elefante",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal8 = {
+    "nome" : "Elefante",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal9 = {
+    "nome" : "Elefante",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        },
+        animal10 = {
+    "nome" : "Elefante",
+    "especie"  : "Elephas maximus",
+    "pais"  : "África do Sul",
+    "numeroVivos"  : "10000"
+        };
+
+        let animais  = [animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10];
+
+        const header = ["Nome","Espécie","País","Número de exemplares vivos"];
+
+        function myFunction() {
+  
+          var x = document.createElement("TABLE");
+          x.setAttribute("id", "myTable");
+          document.body.appendChild(x);
+          
+          const thead = document.createElement("thead");
+          const theadTr  = document.createElement("tr");
+          var tbody = document.createElement("TBODY");
+
+            
+          let contarIndividuos = 0; 
+
+          for(let i = 0; i < header.length; i++){
+
+            const theadThi = document.createElement("th");
+            const texti = document.createTextNode(header[i]);
+            theadThi.appendChild(texti);
+            theadTr.appendChild(theadThi);
+            thead.appendChild(theadTr);
+            //count = i        
+                    
+         }
+
+        for(let j = 0; j < animais.length; j++){        
+            for(let k = 0; k < header.length; k++){
+            
+            if(k==0){
+                var tbodyTr = document.createElement("TR");
+            }
+            let animal = animais[j]; 
+            var tbodyTd = document.createElement("TD");
+            tbodyTd.textContent = Object.values(animal)[k];
+            tbodyTr.appendChild(tbodyTd);
+            tbody.appendChild(tbodyTr);
+            document.getElementById("myTable").appendChild(tbody);
+
+            if(Object.keys(animal)[k] == "numeroVivos"){
+                contarIndividuos += parseInt(Object.values(animal)[k]);
+            }
+
+         }
+        }
+        document.getElementById("myTable").appendChild(thead);
+        document.getElementById("myTable").appendChild(tbody);
+          var tfoot = document.createElement("TFOOT");
+          var tfootTr = document.createElement("TR");
+          var tfootTd = document.createElement("TD");
+          tfootTd.textContent = "Total de espécies: " + contarIndividuos;
+          tfootTr.appendChild(tfootTd);
+          tfoot.appendChild(tfootTr);
+          document.getElementById("myTable").appendChild(tfoot);
+    }
+    
+    myFunction();
+
+    let table = document.getElementById("myTable");
+    table.style.border = "1px solid black";
+
+    </script>
+
+
+</body>
+</html>
