@@ -100,15 +100,16 @@
                     
          }
 
-        for(let j = 0; j < animais.length; j++){        
+        for(let j = 0; j < animais.length; j++){   
+            let animal = animais[j];      
             for(let k = 0; k < header.length; k++){
-            
+
             if(k==0){
                 var tbodyTr = document.createElement("TR");
             }
-            let animal = animais[j]; 
+
             var tbodyTd = document.createElement("TD");
-            tbodyTd.textContent = Object.values(animal)[k];
+            tbodyTd.textContent =  Object.values(animal)[k];
             styleTable(tbodyTd);
             tbodyTr.appendChild(tbodyTd);
             tbodyTr.setAttribute("class", "body__information");
