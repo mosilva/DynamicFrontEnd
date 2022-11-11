@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  
+  <head>
+  
+    <meta charset="UTF-8" />
+    <title>Exercicio - Produtos</title>
+  
+  </head>
+
+  <body>
+        
+    <section class="produtos-lista">
+          <div
+            class="produtos-lista__produto-item"
+            data-item="camiseta-esportiva">
+
+            <h1>TÍTULO</h1>
+            
+            <p>DESCRIÇÃO</p>
+            
+            <span>PREÇO</span>
+          
+          </div>
+          
+          <div class="produtos-lista__produto-item" data-item="bermuda-jeans">
+          
+            <h1>TÍTULO</h1>
+          
+          </div>
+          
+          <div class="produtos-lista__produto-item"  data-item="calca-moletom"></div>
+
+        </section>
+        
+        <script>
+          
+          text = `<produtos>
+                <produto>
+                  <titulo>Camiseta Esportiva</titulo>
+                  <descricao>Com tecnologia inovadora que, além de controlar o calor, ajuda a reduzir a transpiração.</descricao>
+                  <preco>35,50</preco>
+                </produto>
+                <produto>
+                  <titulo>Bermuda Jeans</titulo>
+                  <descricao>Bordada no estilo ROCK! 100% Algodão.</descricao>
+                  <preco>54,62</preco>
+                </produto>
+                <produto>
+                  <titulo>Calça Moletom</titulo>
+                  <descricao>Básica com modelagem reta, perfeita para o look confortável, com forro peludinho.</descricao>
+                  <preco>79,90</preco>
+                </produto>
+              </produtos>`;
+
+          parser = new DOMParser();
+          const xml = parser.parseFromString(text, "text/xml");
+
+          const itens = document.querySelectorAll("div[data-item]");
+
+          itens.forEach((item, index) => {
+
+            const titulo =
+              xml.getElementsByTagName("titulo")[index].childNodes[0].nodeValue;
+            const descricao =
+              xml.getElementsByTagName("descricao")[index].childNodes[0]
+                .nodeValue;
+            const preco =
+              xml.getElementsByTagName("preco")[index].childNodes[0].nodeValue;
+
+          itens[index].innerHTML = `<h1>${titulo}</h1><p>${descricao}</p><span>${preco}</span>`;});
+       
+       </script>
+
+  </body>
+  
+</html>
