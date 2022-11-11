@@ -1,5 +1,14 @@
 # Dynamic Front End
 
+<h2>Class<h2/>
+<figure>
+<figcaption>Vanilla JS</figcaption>
+<ol type = "i">
+<li><a href = "https://mosilva.github.io/DynamicFrontEnd/General/Class/exercise1_products.html" target="_blank"> Products - tags HTML<a/></li>
+<li><a href = "https://mosilva.github.io/DynamicFrontEnd/General/Class/exercise2/exercise2_animals-table_principal.html" target="_blank"> Animal tables<a/></li>
+</figure>
+
+
 <h2>Extras<h2/>
 <figure>
 <figcaption>Module 1 - text / style / UI</figcaption>
