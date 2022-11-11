@@ -8,6 +8,7 @@
 </head>
 <body>
 
+
     <script>
         let animal1 = {
     "nome" : "Elefante",
@@ -76,15 +77,15 @@
 
         function myFunction() {
   
-          var x = document.createElement("TABLE");
-          x.setAttribute("id", "myTable");
-          document.body.appendChild(x);
+          var table = document.createElement("TABLE");
+          table.setAttribute("id", "myTable");
+          document.body.appendChild(table);
+          styleTable(table);
           
           const thead = document.createElement("thead");
           const theadTr  = document.createElement("tr");
           var tbody = document.createElement("TBODY");
-
-            
+           
           let contarIndividuos = 0; 
 
           for(let i = 0; i < header.length; i++){
@@ -92,9 +93,10 @@
             const theadThi = document.createElement("th");
             const texti = document.createTextNode(header[i]);
             theadThi.appendChild(texti);
+            styleTable(theadThi);
             theadTr.appendChild(theadThi);
             thead.appendChild(theadTr);
-            //count = i        
+            //count = i       
                     
          }
 
@@ -107,31 +109,65 @@
             let animal = animais[j]; 
             var tbodyTd = document.createElement("TD");
             tbodyTd.textContent = Object.values(animal)[k];
+            styleTable(tbodyTd);
             tbodyTr.appendChild(tbodyTd);
+            tbodyTr.setAttribute("class", "body__information");
             tbody.appendChild(tbodyTr);
             document.getElementById("myTable").appendChild(tbody);
 
             if(Object.keys(animal)[k] == "numeroVivos"){
                 contarIndividuos += parseInt(Object.values(animal)[k]);
             }
-
          }
         }
-        document.getElementById("myTable").appendChild(thead);
+
+        table.appendChild(thead);
         document.getElementById("myTable").appendChild(tbody);
+
           var tfoot = document.createElement("TFOOT");
           var tfootTr = document.createElement("TR");
           var tfootTd = document.createElement("TD");
-          tfootTd.textContent = "Total de espécies: " + contarIndividuos;
+          tfootTd.setAttribute("colspan","4");
+        //   tfootTd.textContent = "Total de espécies: " + contarIndividuos;
+          tfootTd.textContent = "Total de espécies: " + contarIndividuos;  
           tfootTr.appendChild(tfootTd);
           tfoot.appendChild(tfootTr);
+
           document.getElementById("myTable").appendChild(tfoot);
+
+
+        //   Object.assign(table.style,tfootTd.style,{
+        //     'font-size': "15px",
+        //     textAlign: "center",
+        //     margin: "1vw",
+        //     padding: "1vw",     
+        //     border: "1px black solid"    
+        //  })
+
+            //  for (let i = 0; i < animais.length; i++){
+            //     document.getElementsByClassName("body__information")[i].childNodes[1].style.cssText = 
+            //     "font-style:italic";
+            //  }
+
+
     }
+ 
+    function styleTable(tag){        
+        Object.assign(tag.style,{
+            'font-size': "15px",
+            textAlign: "center",
+            margin: "1vw",
+            padding: "1vw",     
+            'border-collapse': "collapse",
+            border: "1px black solid"    
+         })
+    }
+
     
     myFunction();
 
-    let table = document.getElementById("myTable");
-    table.style.border = "1px solid black";
+  
+
 
     </script>
 
