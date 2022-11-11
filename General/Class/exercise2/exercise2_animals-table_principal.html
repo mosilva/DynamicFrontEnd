@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -10,7 +9,7 @@
 
 
     <script>
-        let animal1 = {
+        const animal1 = {
     "nome" : "Elefante",
     "especie"  : "Elephas maximus",
     "pais"  : "África do Sul",
@@ -71,20 +70,20 @@
     "numeroVivos"  : "10000"
         };
 
-        let animais  = [animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10];
-
-        const header = ["Nome","Espécie","País","Número de exemplares vivos"];
+        const animais  = [animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10];
+ 
+        const header = ["Nome", "Espécie", "País", "Número de exemplares vivos"];
 
         function myFunction() {
   
-          var table = document.createElement("TABLE");
+          const table = document.createElement("TABLE");
           table.setAttribute("id", "myTable");
           document.body.appendChild(table);
           styleTable(table);
           
           const thead = document.createElement("thead");
           const theadTr  = document.createElement("tr");
-          var tbody = document.createElement("TBODY");
+          const tbody = document.createElement("TBODY");
            
           let contarIndividuos = 0; 
 
@@ -100,35 +99,34 @@
                     
          }
 
-        for(let j = 0; j < animais.length; j++){   
-            let animal = animais[j];      
-            for(let k = 0; k < header.length; k++){
+         
+        for (let j = 0; j < animais.length; j++) {   
+            let animal = animais[j];     
+            var tbodyTr = document.createElement("TR");
 
-            if(k==0){
-                var tbodyTr = document.createElement("TR");
+            for (let k = 0; k < header.length; k++) {
+
+                var tbodyTd = document.createElement("TD");
+                tbodyTd.textContent = Object.values(animal)[k];
+                styleTable(tbodyTd);
+                tbodyTr.appendChild(tbodyTd);
+                tbodyTr.setAttribute("class", "body__information");
+                tbody.appendChild(tbodyTr);
+                document.getElementById("myTable").appendChild(tbody);
+
+                if (Object.keys(animal)[k] == "numeroVivos") {
+                    contarIndividuos += parseInt(Object.values(animal)[k]);
+                }
             }
-
-            var tbodyTd = document.createElement("TD");
-            tbodyTd.textContent =  Object.values(animal)[k];
-            styleTable(tbodyTd);
-            tbodyTr.appendChild(tbodyTd);
-            tbodyTr.setAttribute("class", "body__information");
-            tbody.appendChild(tbodyTr);
-            document.getElementById("myTable").appendChild(tbody);
-
-            if(Object.keys(animal)[k] == "numeroVivos"){
-                contarIndividuos += parseInt(Object.values(animal)[k]);
-            }
-         }
         }
 
         table.appendChild(thead);
         document.getElementById("myTable").appendChild(tbody);
 
-          var tfoot = document.createElement("TFOOT");
-          var tfootTr = document.createElement("TR");
-          var tfootTd = document.createElement("TD");
-          tfootTd.setAttribute("colspan","4");
+        const tfoot = document.createElement("TFOOT");
+        const tfootTr = document.createElement("TR");
+        const tfootTd = document.createElement("TD");
+        tfootTd.setAttribute("colspan","4");
         //   tfootTd.textContent = "Total de espécies: " + contarIndividuos;
           tfootTd.textContent = "Total de espécies: " + contarIndividuos;  
           tfootTr.appendChild(tfootTd);
@@ -153,7 +151,8 @@
 
     }
  
-    function styleTable(tag){        
+    function styleTable(tag) {
+
         Object.assign(tag.style,{
             'font-size': "15px",
             textAlign: "center",
@@ -163,11 +162,8 @@
             border: "1px black solid"    
          })
     }
-
     
-    myFunction();
-
-  
+    myFunction();  
 
 
     </script>
