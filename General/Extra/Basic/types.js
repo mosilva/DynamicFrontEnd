@@ -25,3 +25,8 @@ const textN1 = "Marcelo";
 const textN2 = "m";
 
 console.log(textN1 > textN2);
+
+//Specials types
+
+console.log(null == undefined); // true
+console.log(null === undefined); // false
