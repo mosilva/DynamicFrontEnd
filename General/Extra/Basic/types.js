@@ -29,4 +29,13 @@ console.log(textN1 > textN2);
 //Specials types
 
 console.log(null == undefined); // true
-console.log(null === undefined); // false
+console.log(null === undefined); // falseCOP
+
+//Truthy or false
+
+// 0 => false
+// 1 => true
+
+console.log(0 == false);
+
+console.error(new Error("deu erro"));

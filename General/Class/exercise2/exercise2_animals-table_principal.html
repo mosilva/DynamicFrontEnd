@@ -1,123 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-
-
+  </head>
+  <body>
     <script>
-        const animal1 = {
-    "nome" : "Elefante",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+      const animal1 = {
+          nome: "Elefante",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal2 = {
-    "nome" : "Gafanhoto",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Gafanhoto",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal3 = {
-    "nome" : "Aguia",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Aguia",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal4 = {
-    "nome" : "Barata",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Barata",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal5 = {
-    "nome" : "Elefante",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Elefante",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal6 = {
-    "nome" : "Elefante",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Elefante",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal7 = {
-    "nome" : "Elefante",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Elefante",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal8 = {
-    "nome" : "Elefante",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Elefante",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal9 = {
-    "nome" : "Elefante",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Elefante",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         },
         animal10 = {
-    "nome" : "Elefante",
-    "especie"  : "Elephas maximus",
-    "pais"  : "África do Sul",
-    "numeroVivos"  : "10000"
+          nome: "Elefante",
+          especie: "Elephas maximus",
+          pais: "África do Sul",
+          numeroVivos: "10000",
         };
 
-        const animais  = [animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10];
- 
-        const header = ["Nome", "Espécie", "País", "Número de exemplares vivos"];
+      const animais = [
+        animal1,
+        animal2,
+        animal3,
+        animal4,
+        animal5,
+        animal6,
+        animal7,
+        animal8,
+        animal9,
+        animal10,
+      ];
 
-        function myFunction() {
-  
-          const table = document.createElement("TABLE");
-          table.setAttribute("id", "myTable");
-          document.body.appendChild(table);
-          styleTable(table);
-          
-          const thead = document.createElement("thead");
-          const theadTr  = document.createElement("tr");
-          const tbody = document.createElement("TBODY");
-           
-          let contarIndividuos = 0; 
+      const header = ["Nome", "Espécie", "País", "Número de exemplares vivos"];
 
-          for(let i = 0; i < header.length; i++){
+      function myFunction() {
+        const table = document.createElement("TABLE");
+        table.setAttribute("id", "myTable");
+        document.body.appendChild(table);
+        styleTable(table);
 
-            const theadThi = document.createElement("th");
-            const texti = document.createTextNode(header[i]);
-            theadThi.appendChild(texti);
-            styleTable(theadThi);
-            theadTr.appendChild(theadThi);
-            thead.appendChild(theadTr);
-            //count = i       
-                    
-         }
+        const thead = document.createElement("thead");
+        const theadTr = document.createElement("tr");
+        const tbody = document.createElement("TBODY");
 
-         
-        for (let j = 0; j < animais.length; j++) {   
-            let animal = animais[j];     
-            var tbodyTr = document.createElement("TR");
+        let contarIndividuos = 0;
 
-            for (let k = 0; k < header.length; k++) {
+        for (let i = 0; i < header.length; i++) {
+          const theadThi = document.createElement("th");
+          const texti = document.createTextNode(header[i]);
+          theadThi.appendChild(texti);
+          styleTable(theadThi);
+          theadTr.appendChild(theadThi);
+          thead.appendChild(theadTr);
+          //count = i
+        }
 
-                var tbodyTd = document.createElement("TD");
-                tbodyTd.textContent = Object.values(animal)[k];
-                styleTable(tbodyTd);
-                tbodyTr.appendChild(tbodyTd);
-                tbodyTr.setAttribute("class", "body__information");
-                tbody.appendChild(tbodyTr);
-                document.getElementById("myTable").appendChild(tbody);
+        for (let j = 0; j < animais.length; j++) {
+          let animal = animais[j];
+          var tbodyTr = document.createElement("TR");
 
-                if (Object.keys(animal)[k] == "numeroVivos") {
-                    contarIndividuos += parseInt(Object.values(animal)[k]);
-                }
+          for (let k = 0; k < header.length; k++) {
+            var tbodyTd = document.createElement("TD");
+            tbodyTd.textContent = Object.values(animal)[k];
+            styleTable(tbodyTd);
+            tbodyTr.appendChild(tbodyTd);
+            tbodyTr.setAttribute("class", "body__information");
+            tbody.appendChild(tbodyTr);
+            document.getElementById("myTable").appendChild(tbody);
+
+            if (Object.keys(animal)[k] == "numeroVivos") {
+              contarIndividuos += parseInt(Object.values(animal)[k]);
             }
+          }
         }
 
         table.appendChild(thead);
@@ -126,48 +130,40 @@
         const tfoot = document.createElement("TFOOT");
         const tfootTr = document.createElement("TR");
         const tfootTd = document.createElement("TD");
-        tfootTd.setAttribute("colspan","4");
+        tfootTd.setAttribute("colspan", "4");
         //   tfootTd.textContent = "Total de espécies: " + contarIndividuos;
-          tfootTd.textContent = "Total de espécies: " + contarIndividuos;  
-          tfootTr.appendChild(tfootTd);
-          tfoot.appendChild(tfootTr);
+        tfootTd.textContent = "Total de espécies: " + contarIndividuos;
+        tfootTr.appendChild(tfootTd);
+        tfoot.appendChild(tfootTr);
 
-          document.getElementById("myTable").appendChild(tfoot);
-
+        document.getElementById("myTable").appendChild(tfoot);
 
         //   Object.assign(table.style,tfootTd.style,{
         //     'font-size': "15px",
         //     textAlign: "center",
         //     margin: "1vw",
-        //     padding: "1vw",     
-        //     border: "1px black solid"    
+        //     padding: "1vw",
+        //     border: "1px black solid"
         //  })
 
-            //  for (let i = 0; i < animais.length; i++){
-            //     document.getElementsByClassName("body__information")[i].childNodes[1].style.cssText = 
-            //     "font-style:italic";
-            //  }
+        //  for (let i = 0; i < animais.length; i++){
+        //     document.getElementsByClassName("body__information")[i].childNodes[1].style.cssText =
+        //     "font-style:italic";
+        //  }
+      }
 
+      function styleTable(tag) {
+        Object.assign(tag.style, {
+          "font-size": "15px",
+          textAlign: "center",
+          margin: "1vw",
+          padding: "1vw",
+          "border-collapse": "collapse",
+          border: "1px black solid",
+        });
+      }
 
-    }
- 
-    function styleTable(tag) {
-
-        Object.assign(tag.style,{
-            'font-size': "15px",
-            textAlign: "center",
-            margin: "1vw",
-            padding: "1vw",     
-            'border-collapse': "collapse",
-            border: "1px black solid"    
-         })
-    }
-    
-    myFunction();  
-
-
+      myFunction();
     </script>
-
-
-</body>
+  </body>
 </html>
