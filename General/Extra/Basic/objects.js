@@ -65,7 +65,43 @@ client.deposit(500);
 //     console.log(`${info} ==> ${client[info]}\n`);
 // }
 
-console.table(client);
+//********************* */ Table
+
+// const student = {
+//     name: "Rafaela",
+//     age: 10
+// }
+
+// console.table(student);
+
+function Client(name, cpf, email, balance)
+{
+    this.name = name;
+    this.cpf = cpf;
+    this.email = email;
+    this.balance = balance;
+    
+    this.deposit = function(money)
+    {
+        balance += money;
+    }
+}
+
+const marcelo = new Client("Marcelo", "11122233344", "marcelo.olisi@gmail.com","100","200");
+
+console.log(marcelo);
+
+function ClientSavings(name,cpf,email,balanceSavings){
+
+    Client.call(this,name,cpf,email);
+    this.balanceSavings = balanceSavings;
+
+}
+
+ClientSavings.prototype.DepositSavings = function(money){
+    this.balanceSavings += money;
+}
+
 
 
 
