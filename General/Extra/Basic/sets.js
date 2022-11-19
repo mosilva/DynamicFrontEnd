@@ -48,8 +48,21 @@ const gradesDuplicated = [...gradesUniversity];
 
 gradesDuplicated.push(8);
 
-console.log(gradesDuplicated);
-console.log(gradesUniversity);
+// console.log(gradesDuplicated);
+// console.log(gradesUniversity);
+
+
+// Set (conjunto)
+
+const namesStudents = ["Ana", "Clara", "Maria", "Maria", "João", "João", "João"];
+
+const mySet = new Set(namesStudents);
+
+const namesStudentUpdated = [...mySet]
+
+// or const namesStudentUpdated = [...new Set(namesStudents)]
+
+console.log(namesStudentUpdated);
 
 
 
