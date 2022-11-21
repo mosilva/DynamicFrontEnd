@@ -1,5 +1,20 @@
 console.log(document);
 
+(() => {
+    for(const nameFile of [
+        "styles.js",
+        "read-establishments.js",
+        "form.js",
+        "create-establishments.js",
+        "delete-establishments.js",
+        "filter.js"
+    ]) {
+    const script = document.createElement("script");
+    script.setAttribute("src", `./js/${nameFile}`);
+    document.body.appendChild(script);
+}})();
+
+
 let CatalogBooks = 
     [
         {

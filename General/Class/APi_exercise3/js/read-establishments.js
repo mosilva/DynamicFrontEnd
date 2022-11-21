@@ -7,7 +7,7 @@ function showBooks(book){
     
         const tableMainTbodyTr = document.createElement("tr");
         tableMainTbodyTr.setAttribute("class","book");
-        tableMainTbodyTr.setAttribute("class", "body-information");
+        tableMainTbodyTr.setAttribute("class","body-information");
 
         for (let k = 0; k < header.length; k++) {
           const tableMainTbodyTd = document.createElement("td");
@@ -41,7 +41,7 @@ function generateTableShowsBooks(){
     inputCatalogoSearch.setAttribute("type","text");
     inputCatalogoSearch.setAttribute("name","filter");
     inputCatalogoSearch.setAttribute("id","filter-table");
-    inputCatalogoSearch.setAttribute("placeholder","Digite o nome do livro");
+    inputCatalogoSearch.setAttribute("placeholder","Digite o título do livro...");
     filterBooks(inputCatalogoSearch);
     sectionCatalogo.appendChild(inputCatalogoSearch);     
     
