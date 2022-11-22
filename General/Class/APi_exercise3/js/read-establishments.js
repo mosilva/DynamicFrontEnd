@@ -9,7 +9,8 @@ function showBooks(book){
         tableMainTbodyTr.setAttribute("class","book");
         tableMainTbodyTr.setAttribute("class","body-information");
 
-        for (let k = 0; k < header.length; k++) {
+        for (let k = 0; k < header.length; k++) 
+        {
           const tableMainTbodyTd = document.createElement("td");
           tableMainTbodyTd.textContent = Object.values(book)[k];
           tableMainTbodyTd.setAttribute("class","info-"+ Object.keys(book)[k]);

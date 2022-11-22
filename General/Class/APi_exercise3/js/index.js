@@ -1,7 +1,15 @@
 console.log(document);
 
+// "styles.js",
+// "read-establishments.js",
+// "form.js",
+// "create-establishments.js",
+// "delete-establishments.js",
+// "filter.js"
+
 (() => {
     for(const nameFile of [
+        "api-conection.js",
         "styles.js",
         "read-establishments.js",
         "form.js",
@@ -50,3 +58,18 @@ function generateHeader()
     }
 
 generateHeader();
+
+
+
+// .then(response => {
+//     if(response.erro){
+//         throw Error("Inválido")
+//     } else{   
+//     response.json()}
+//     })
+// .then(response => console.log(response))
+// .catch(error => console.log(error) )
+// .finally (menssage => console.logo("finished"));
+
+
+
