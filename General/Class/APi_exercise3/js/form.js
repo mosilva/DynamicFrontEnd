@@ -1,29 +1,28 @@
+
 const mainForm = document.createElement("form");
 mainForm.setAttribute("class","form-add");
 
 function createInputs(){
 
-    for(let i = 0; i < header.length; i++)
+    for (let [k, v] of Object.entries(header))
     {            
-        element = header[i];
         const divForm = document.createElement("div");
         divForm.setAttribute("class","group-input");
         styleSpace(divForm);
         
         const labelForm = document.createElement("label");
-        labelForm.setAttribute("for",element);
-        labelForm.textContent = element + " : ";
+        labelForm.setAttribute("for",k);
+        labelForm.textContent = k + " : ";
         divForm.appendChild(labelForm);
 
         const inputForm = document.createElement("input");
-        inputForm.setAttribute("id", element);
-        inputForm.setAttribute("name", element);
-        const article = element[element.length-1] =='a'? "a ": "o ";
-        inputForm.setAttribute("placeholder","Digite aqui " + article + (element.toLowerCase()) + "...");
-        element === "Tiragem"? inputForm.setAttribute("type","number") : inputForm.setAttribute("type","text");
+        inputForm.setAttribute("id", k);
+        inputForm.setAttribute("name", k);
+        inputForm.setAttribute("placeholder","Digite aqui para o campo " + (k.toLowerCase()) + "...");
+        inputForm.setAttribute("type",v);
         inputForm.setAttribute("class", "campo");     
         divForm.appendChild(inputForm);
-            
+        
         mainForm.appendChild(divForm);
     }
 }

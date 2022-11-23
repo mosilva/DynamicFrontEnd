@@ -24,7 +24,7 @@ buttonForm.addEventListener("click", function(event)
         let ulError = document.querySelector("#error-message");
         ulError.innerHTML = "";
 
-        CatalogBooks.push(newBook);
+        createBooks(newBook.Tiragem,newBook.Titulo,newBook.Autor,newBook.Descricao);
 
         showBooks(newBook);  
 

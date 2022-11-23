@@ -1,9 +1,8 @@
 const url = "http://livros.letscode.dev.netuno.org:25390/services";
+const uidStudent = "94b602ba-bdbb-4080-9f71-cd2f0b0a20e0"
 
-let CatalogBooks2 = "";
-
-function searchBooks() {
-  CatalogBooks2 = fetch(`${url}/livro/lista`, {
+window.searchBooks = async function () {
+  const promise = await fetch(`${url}/livro/lista`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,55 +11,39 @@ function searchBooks() {
     body: JSON.stringify({
       text: "",
       aluno: {
-        uid: "94b602ba-bdbb-4080-9f71-cd2f0b0a20e0",
-      },
-    }),
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      if (response.error) {
-        throw Error("Falha");
-      } else {
-        return response;
+        uid: uidStudent,
       }
     })
-    .catch((error) => console.log(error));
-}
+  })
 
-searchBooks();
-console.log(CatalogBooks2);
+  if (!promise) {
+    return [];
+  }
 
-let bookApi = "";
-function updateBooks() {
-  bookApi = fetch(`${url}/livro/lista`, {
-    method: "PUT",
+  return promise.json();
+};
+
+window.createBooks = async function (Tiragem, Titulo, Autor, Descricao) {
+    return await fetch(`${url}/livro`, {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-
     body: JSON.stringify({
-      uid: "6548fd31-d4f1-4940-8c89-009e53b68a4b",
+      text: "",
       aluno: {
-        uid: "94b602ba-bdbb-4080-9f71-cd2f0b0a20e0",
-      },
-      tiragem: books.tiragem.value,
-      titulo: "string",
-      autor: "string",
-      descricao: "string",
-    }),
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      if (response.error) {
-        throw Error("Falha");
-      } else {
-        return response;
-      }
+        uid: uidStudent,
+      }, 
+        tiragem: Tiragem,
+        titulo: Titulo, 
+        autor: Autor, 
+        descricao: Descricao
     })
-    .catch((error) => console.log(error));
-}
+  })
+};
 
-// (async () => {
+
+
 //     const books = await searchBooks();
 //     console.log(books);
 // })();
