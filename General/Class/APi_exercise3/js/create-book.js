@@ -1,7 +1,7 @@
 
 const buttonForm = document.querySelector("#add-books");
 
-buttonForm.addEventListener("click", function(event)
+buttonForm.addEventListener("click", async function(event)
 {
     event.preventDefault();    
 
@@ -24,7 +24,8 @@ buttonForm.addEventListener("click", function(event)
         let ulError = document.querySelector("#error-message");
         ulError.innerHTML = "";
 
-        createBooks(newBook.Tiragem,newBook.Titulo,newBook.Autor,newBook.Descricao);
+
+        await createBooksApi(newBook.Tiragem, newBook.Titulo, newBook.Autor, newBook.Descricao);
 
         showBooks(newBook);  
 
