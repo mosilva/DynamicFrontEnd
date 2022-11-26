@@ -7,10 +7,10 @@ buttonForm.addEventListener("click", async function(event)
 
     let newBook = 
         {
-            "Titulo": mainForm.Título.value,     
-            "Autor": mainForm.Autor.value,
-            "Descricao":  mainForm.Descrição.value,
-            "Tiragem": mainForm.Tiragem.value,
+            "titulo": mainForm.Título.value,     
+            "autor": mainForm.Autor.value,
+            "descricao":  mainForm.Descrição.value,
+            "tiragem": mainForm.Tiragem.value,
         }    
 
     let errors = validateBook(newBook);
@@ -25,11 +25,11 @@ buttonForm.addEventListener("click", async function(event)
         ulError.innerHTML = "";
 
 
-        await createBooksApi(newBook.Tiragem, newBook.Titulo, newBook.Autor, newBook.Descricao);
+        const response = await api.createBooks(newBook);
 
         showBooks(newBook);  
 
-        mainForm.reset();
+        // mainForm.reset();
     }
     
 });
@@ -38,12 +38,12 @@ buttonForm.addEventListener("click", async function(event)
 function validateBook(book){
     let allErrors = [];
 
-    if(book.Titulo.length < 3)
+    if(book.titulo.length < 3)
     {
         allErrors.push("O título do livro deve ter no mínimo 3 letras!");
     }
 
-    if(book.Autor.length < 3)
+    if(book.autor.length < 3)
     {
         allErrors.push("O autor do livro deve ter no mínimo 3 letras!");
 

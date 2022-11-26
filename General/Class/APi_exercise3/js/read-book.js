@@ -87,7 +87,7 @@ function generateTableShowsBooks(){
 
     (async () => {
 
-        const searchBooksConverted = await searchBooks();     
+        const searchBooksConverted = await api.searchBooks();     
 
         showBooks(searchBooksConverted);      
     })();  

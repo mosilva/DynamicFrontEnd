@@ -1,14 +1,14 @@
-const url = "http://livros.letscode.dev.netuno.org:25390/services";
-const uidStudent = "94b602ba-bdbb-4080-9f71-cd2f0b0a20e0"
+const url = "http://livros.letscode.dev.netuno.org:25390/services/livro";
+const uidStudent = "94b602ba-bdbb-4080-9f71-cd2f0b0a20e0";
 
-window.searchBooks = async function () {
+window.api = {
+  searchBooks: async () => {
   try {
-  const promise = await fetch(`${url}/livro/lista`, {
+  const promise = await fetch(`${url}/lista`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-    },
-
+    },    
     body: JSON.stringify({
       text: "",
       aluno: {
@@ -26,47 +26,37 @@ window.searchBooks = async function () {
 } catch (error) {
   console.error("Erro na comunicação: ", error);
   }
-};
+},
 
 
-window.createBooksApi = async function (Tiragem, Titulo, Autor, Descricao) {
-  try {
-  const promise = await fetch(`${url}/livro`, {
+createBooks : async (newBook) => { 
+  const response = await fetch(`${url}`, {
     method: "POST",
     headers: {
-      Accept: 'application.json',
-      "Content-Type": "application/json",
+        "Content-Type": "application/json",
     },
-    body: JSON.stringify
-    (
-      {
-        text: "",
-        aluno: 
-        {
-            "uid": uidStudent,
-        }, 
-        tiragem: Tiragem,
-        titulo: Titulo, 
-        autor: Autor, 
-        descricao: Descricao,
-      }
-    )
-  })
-  if (!promise) {
+    body: JSON.stringify({
+        aluno: {
+        uid: uidStudent,
+        },
+        tiragem: parseInt(newBook.tiragem),
+        titulo: newBook.titulo,
+        autor: newBook.autor,
+        descricao: newBook.descricao,
+    }),
+}).catch((error) => {
+    console.log("Erro na comunicação:", error);
+});
+
+if (!response) {
     alert("Algo deu errado na requisição! Tente novamente!");
-    return [];
-  }
+}
+return await response.json();
+},
 
-  return promise.json();
-} catch (error) {
-  console.error("Erro na comunicação: ", error);
-  }
-};
-
-
-window.deleteBooks = async function (Uid) {
+deleteBooks: async (Uid) => {
    try {
-        const promise = await fetch(`${url}/livro`,
+        const promise = await fetch(`${url}`,
         {
                 method: 'DELETE',
                 headers:
@@ -96,7 +86,8 @@ window.deleteBooks = async function (Uid) {
       } catch (error) {
         console.error("Erro na comunicação: ", error);
         }
-      };
+      },
+}
 
 // const uidBook = "29e5cbb2-df33-48e9-8de0-7bc75658226e";
 
