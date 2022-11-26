@@ -17,14 +17,16 @@ function showBooks(books){
                 Object.entries(books[i]).forEach((entry) => 
                 {                    
                     const [key, value] = entry;
+                                                      
+                    const tableMainTbodyTd = document.createElement("td");
+                    tableMainTbodyTd.textContent = value;
+                    tableMainTbodyTd.setAttribute("class",`info-${key}`);
                     
-                    if(key != "uid")
-                    {
-                        const tableMainTbodyTd = document.createElement("td");
-                        tableMainTbodyTd.textContent = value;
-                        tableMainTbodyTd.setAttribute("class",`info-${key}`);
-                        tableMainTbodyTr.appendChild(tableMainTbodyTd);
-                    }                    
+                    if(key == "uid"){
+                        tableMainTbodyTd.style.display = "none";
+                    }
+                    
+                    tableMainTbodyTr.appendChild(tableMainTbodyTd);                                                                
                 });
 
                 const tableMainTbodyTdEditar = document.createElement("td");

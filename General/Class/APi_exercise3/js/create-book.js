@@ -29,7 +29,7 @@ buttonForm.addEventListener("click", async function(event)
 
         showBooks(newBook);  
 
-        // mainForm.reset();
+        mainForm.reset();
     }
     
 });

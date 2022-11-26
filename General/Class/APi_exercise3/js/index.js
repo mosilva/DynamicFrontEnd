@@ -7,7 +7,7 @@ console.log(document);
         "read-book.js",
         "form.js",
         "create-book.js",
-        "delete-establishments.js",
+        "delete-book.js",
         "filter.js"
     ]) {
     const script = document.createElement("script");
