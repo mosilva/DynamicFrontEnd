@@ -2,6 +2,7 @@ const url = "http://livros.letscode.dev.netuno.org:25390/services";
 const uidStudent = "94b602ba-bdbb-4080-9f71-cd2f0b0a20e0"
 
 window.searchBooks = async function () {
+  try {
   const promise = await fetch(`${url}/livro/lista`, {
     method: "POST",
     headers: {
@@ -17,14 +18,20 @@ window.searchBooks = async function () {
   })
 
   if (!promise) {
+    alert("Algo deu errado na requisição! Tente novamente!");
     return [];
   }
 
   return promise.json();
+} catch (error) {
+  console.error("Erro na comunicação: ", error);
+  }
 };
 
+
 window.createBooksApi = async function (Tiragem, Titulo, Autor, Descricao) {
-  const newBook = await fetch(`${url}/livro`, {
+  try {
+  const promise = await fetch(`${url}/livro`, {
     method: "POST",
     headers: {
       Accept: 'application.json',
@@ -45,16 +52,21 @@ window.createBooksApi = async function (Tiragem, Titulo, Autor, Descricao) {
       }
     )
   })
-  if(newBook.ok)
-  {
-      return newBook.ok;
+  if (!promise) {
+    alert("Algo deu errado na requisição! Tente novamente!");
+    return [];
   }
 
+  return promise.json();
+} catch (error) {
+  console.error("Erro na comunicação: ", error);
+  }
 };
 
-window.deleteBooks = async function (Uid) 
-{
-        const books = await fetch(`${url}/livro`,
+
+window.deleteBooks = async function (Uid) {
+   try {
+        const promise = await fetch(`${url}/livro`,
         {
                 method: 'DELETE',
                 headers:
@@ -75,12 +87,16 @@ window.deleteBooks = async function (Uid)
 
         })
 
-        if(books.ok)
-        {
-            return books.ok;
+        if (!promise) {
+          alert("Algo deu errado na requisição! Tente novamente!");
+          return [];
         }
-
-}
+      
+        return promise.json();
+      } catch (error) {
+        console.error("Erro na comunicação: ", error);
+        }
+      };
 
 // const uidBook = "29e5cbb2-df33-48e9-8de0-7bc75658226e";
 
