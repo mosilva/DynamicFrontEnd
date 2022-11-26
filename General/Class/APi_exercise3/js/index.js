@@ -3,7 +3,7 @@ console.log(document);
 (() => {
     for(const nameFile of [
         "api-conection.js",
-        "styles.js",
+        "./common/styles.js",
         "read-book.js",
         "form.js",
         "create-book.js",

@@ -36,7 +36,7 @@ function styleSpace(tag) {
   }
 
 
-function deleteBooks(tag) {
+window.deleteBooks = (tag) => {
     Object.assign(tag.style, {
       opacity: "0",
       transition: "0.5s"

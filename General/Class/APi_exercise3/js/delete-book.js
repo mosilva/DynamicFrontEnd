@@ -1,16 +1,20 @@
 let tableBooks = document.querySelector("table");
 
-tableBooks.addEventListener("dblclick", function(event)
+tableBooks.addEventListener("dblclick",async function(event)
 {
     event.preventDefault();  
+
+    const removeItemTable = this.querySelector(".body-information");
+    const itemDeleteTag = this.parentNode.querySelector("td");
+    const itemDelete = itemDeleteTag.textContent;
+
     
-    console.log(event.target.parentNode);
+    await api.deleteBook(itemDelete);
 
-    // deleteEstab(event.target.parentNode);
+    deleteBooks(removeItemTable);
 
-    // setTimeout(function(){
-    //     event.target.parentNode.remove();
-    // },500);
-
+    setTimeout(function(){
+        removeItemTable.remove();
+    },500);
 
 });
