@@ -1,5 +1,4 @@
-
-const buttonForm = document.querySelector("#add-books");
+const buttonForm = document.querySelector("#main-button");
 
 buttonForm.addEventListener("click", async function(event)
 {
@@ -7,17 +6,17 @@ buttonForm.addEventListener("click", async function(event)
 
     let newBook = 
         {
-            "titulo": mainForm.Título.value,     
-            "autor": mainForm.Autor.value,
-            "descricao":  mainForm.Descrição.value,
-            "tiragem": mainForm.Tiragem.value,
+            "titulo": mainForm.titulo.value,     
+            "autor": mainForm.autor.value,
+            "descricao":  mainForm.descricao.value,
+            "tiragem": mainForm.tiragem.value,
         }    
 
-    let errors = validateBook(newBook);
+    let errors = functionBooks.validateBook(newBook);
 
     if(errors.length > 0)
     {
-        showErrors(errors);
+        functionBooks.showErrors(errors);
     }  
     else
     {          
@@ -25,45 +24,12 @@ buttonForm.addEventListener("click", async function(event)
         ulError.innerHTML = "";
 
 
-        const response = await api.createBooks(newBook);
+        await api.createBooks(newBook);
 
         showBooks(newBook);  
 
         mainForm.reset();
-    }
-    
-});
 
-
-function validateBook(book){
-    let allErrors = [];
-
-    if(book.titulo.length < 3)
-    {
-        allErrors.push("O título do livro deve ter no mínimo 3 letras!");
-    }
-
-    if(book.autor.length < 3)
-    {
-        allErrors.push("O autor do livro deve ter no mínimo 3 letras!");
-
+        location.reload();
     }    
-    return allErrors;
-
-}
-
-
-function showErrors(errors){
-
-    let ulError = document.querySelector("#error-message");
-    ulError.innerHTML = "";
-
-    errors.forEach(element => {
-        let liError = document.createElement("li");
-        liError.textContent = element;
-        ulError.appendChild(liError);
-        
-    });
-
-
-}
+});

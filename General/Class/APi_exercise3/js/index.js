@@ -1,13 +1,11 @@
-console.log(document);
-
 (() => {
     for(const nameFile of [
         "api-conection.js",
         "./common/styles.js",
+        "./common/function.js",
         "read-book.js",
         "form.js",
         "create-book.js",
-        "delete-book.js",
         "filter.js"
     ]) {
     const script = document.createElement("script");
