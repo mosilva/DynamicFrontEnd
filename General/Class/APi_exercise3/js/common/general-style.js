@@ -1,19 +1,23 @@
 (() => {
     const style = document.createElement("style");
     style.innerHTML += `
-      body, *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      .section-main {
+        flex-direction: row;
       }
-      main{
+
+      main {
           height: 100%;
-          margin-top:20vh;
+          padding: 4 rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          background-color: #f5dd7e;
         }
+
+       button {
+          margin:3vh;
+       } 
     `;
     document.body.appendChild(style);
   })();

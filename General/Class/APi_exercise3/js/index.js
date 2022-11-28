@@ -3,6 +3,7 @@
         "api-conection.js",
         "./common/styles.js",
         "./common/function.js",
+        "./common/general-style.js",
         "read-book.js",
         "form.js",
         "create-book.js",
