@@ -11,7 +11,6 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: center;
           background-color: #f5dd7e;
         }
 
