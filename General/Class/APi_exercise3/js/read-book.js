@@ -70,6 +70,7 @@ function generateTableShowsBooks(){
             const paragraphLastItem = document.createElement("p");
             paragraphLastItem.textContent =  `${element}`;
             paragraphLastItem.setAttribute("id",`item-${index}`);
+            paragraphLastItem.style.color = "#018790";
             divCatalogo.appendChild(paragraphLastItem); 
         }    
     }
