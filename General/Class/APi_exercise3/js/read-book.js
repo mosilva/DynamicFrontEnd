@@ -61,7 +61,7 @@ function generateTableShowsBooks(){
     divCatalogo.appendChild(inputCatalogoSearch);    
     
     const paragraphLastSearch = document.createElement("p");
-    paragraphLastSearch.textContent =  "Salve os elementos pesquisados clicando na lupa. Os 3 últimos termos foram: ";
+    paragraphLastSearch.textContent =  "Salve os elementos pesquisados clicando na lupa. Após, clique nos termos para fazer a pesquisa rápida. Os 3 últimos termos foram: ";
     divCatalogo.appendChild(paragraphLastSearch);  
 
     for (let index = 0; index < 3; index++) {
