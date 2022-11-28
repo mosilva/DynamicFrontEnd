@@ -272,7 +272,7 @@ buttonSearch.addEventListener("click", async function(event){
 });
 
 
-const item0 = document.querySelector(`#item-0`);
+const item0 = document.querySelector("#item-0");
 
 item0.addEventListener("click", async function(event){  
 
@@ -283,7 +283,7 @@ item0.addEventListener("click", async function(event){
     filterFieldSearch.value = localStorage.getItem(`${count}`);
 });
 
-const item1 = document.querySelector(`#item-1`);
+const item1 = document.querySelector("#item-1");
 
 item1.addEventListener("click", async function(event){ 
 
@@ -294,7 +294,7 @@ item1.addEventListener("click", async function(event){
     filterFieldSearch.value = localStorage.getItem(`${count}`);
 });
 
-const item2 = document.querySelector(`#item-2}`);
+const item2 = document.querySelector("#item-2");
 
 item2.addEventListener("click", async function(event){  
 
